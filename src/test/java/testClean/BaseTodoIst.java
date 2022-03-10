@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import singleton.Session;
 
 public class BaseTodoIst {
-    String projName="LlubiProject";
 
     @BeforeEach
     public void openBrowser(){

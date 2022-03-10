@@ -1,0 +1,54 @@
+pagesTodoLy/MainSectionPage.java
+ pagesTodoLy.MainSectionPage
+factoryBrowser/FireFox.java
+ factoryBrowser.FireFox
+factoryBrowser/FactoryBrowser.java
+ factoryBrowser.FactoryBrowser
+singleton/Session.java
+ singleton.Session
+control/ControlAlert.java
+ control.ControlAlert
+testClean/BaseTodoLy.java
+ testClean.BaseTodoLy
+factoryBrowser/IBrowser.java
+ factoryBrowser.IBrowser
+control/Control.java
+ control.Control
+pagesTodoLy/MainMenuPage.java
+ pagesTodoLy.MainMenuPage
+pagesTodoLy/LoginModal.java
+ pagesTodoLy.LoginModal
+pagesTodoLy/MenuLeft.java
+ pagesTodoLy.MenuLeft
+control/TextBox.java
+ control.TextBox
+pages/CentralSection.java
+ pages.CentralSection
+control/Image.java
+ control.Image
+factoryBrowser/Edge.java
+ factoryBrowser.Edge
+pagesTodoLy/RecycleConfirmationMessage.java
+ pagesTodoLy.RecycleConfirmationMessage
+control/Button.java
+ control.Button
+factoryBrowser/Chrome.java
+ factoryBrowser.Chrome
+testClean/RecycleBinTest.java
+ testClean.RecycleBinTest
+control/Label.java
+ control.Label
+pages/MainPage.java
+ pages.MainPage
+pages/LeftMenu.java
+ pages.LeftMenu
+pages/TopBarTools.java
+ pages.TopBarTools
+testClean/BaseTodoIst.java
+ testClean.BaseTodoIst
+pages/LoginPage.java
+ pages.LoginPage
+pages/Add_Edit_ProjectModal.java
+ pages.Add_Edit_ProjectModal
+testClean/LogoutTest.java
+ testClean.LogoutTest

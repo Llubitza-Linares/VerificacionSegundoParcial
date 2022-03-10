@@ -1,17 +1,32 @@
 package pages;
 
 import control.Button;
+import control.ControlAlert;
 import control.Label;
 import org.openqa.selenium.By;
 public class LeftMenu {
 
 
-    public Button addProject= new Button(By.xpath("//button[@class=\"adder_icon\"]"));
+    //CREATE
+    public Button addProjButton = new Button(By.xpath("//button[@class=\"adder_icon\"]"));
 
-    public Label lastListItem=new Label(By.xpath("//div[@class=\"reactist collapse collapse--entered\"]//li[last()]"));
-    public Button projectMenuButton=new Button(By.xpath("//div[@class=\"reactist collapse collapse--entered\"]//li[last()]//button"));
+    //UPDATE
+    public Button moreActionsButton = new Button(By.xpath("//div[@class=\"reactist collapse collapse--entered\"]//li[last()]//button"));
+    public Button updateProjButton = new Button(By.xpath("//div[text()=\"Editar proyecto\"]"));
 
-    public Label lastName=new Label(By.xpath("//li[last()]//div[@data-sidebar-list-item]//span[text()]"));
+    //DELETE
+    public Button deleteProjButton = new Button(By.xpath("//div[text()=\"Eliminar proyecto\"]"));
+    public Button confirmDeleteButton = new Button(By.xpath("//button[text()='Eliminar']"));
+    public ControlAlert alertControl = new ControlAlert();
 
+    public LeftMenu(){}
+    public boolean isProjectNameDisplayed(String name){
+        Label nameProject= new Label(By.xpath("//a//span[text()=\""+name+"\"]"));
+        return nameProject.isControlDisplayed();
+    }
+    public void clickNameProject(String name){
+        Label nameProject = new Label(By.xpath("//a//span[text()=\""+name+"\"]"));
+        nameProject.click();
+    }
 
 }

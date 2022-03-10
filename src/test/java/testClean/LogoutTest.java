@@ -2,37 +2,34 @@ package testClean;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pages.*;
+import pages.LoginPage;
+import pages.MainPage;
+import pages.TopBarTools;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import pages.HomePage;
-import pages.LoginModal;
-import pages.UserMenuPage;
 
 public class LogoutTest extends BaseTodoIst{
-    HomePage homePage = new  HomePage ();
-    LoginModal loginModal = new LoginModal();
-    UserMenuPage userMenuPage = new UserMenuPage();
-    String email="llubi@gmail.com";
+    MainPage mainPage = new MainPage();
+    LoginPage loginPage = new LoginPage();
+    TopBarTools topBarTools = new TopBarTools();
+    String email="llubilinares@gmail.es";
     String password="lapaz2000";
 
     @Test
     public void verifyLogOut() throws InterruptedException {
-        //Log in A TODOIST
+        //Log in
         Thread.sleep(2000);
-        homePage.loginButton.click();
-        loginModal.email.setText(email);
-        loginModal.password.setText(password);
-        loginModal.loginSubmit.click();
-        userMenuPage.userImg.click();
+        mainPage.loginButton.click();
+        loginPage.emailTxtBox.setText(email);
+        loginPage.passwordTxtBox.setText(password);
+        loginPage.loginButton.click();
+        topBarTools.avatarMenuButton.click();
         Thread.sleep(2000);
-        Assertions.assertTrue(userMenuPage.logoutButton.isControlDisplayed(),"ERROR, no se hizo log in");
+        Assertions.assertTrue(topBarTools.logoutButton.isControlDisplayed(),"ERROR, no se hizo log in");
 
-        //Log out TODOIST
-        userMenuPage.logoutButton.click();
+        //Log out
+        topBarTools.logoutButton.click();
         Thread.sleep(3000);
-        Assertions.assertTrue(homePage.loginButton.isControlDisplayed());
+        Assertions.assertTrue(mainPage.loginButton.isControlDisplayed());
 
     }
 }
