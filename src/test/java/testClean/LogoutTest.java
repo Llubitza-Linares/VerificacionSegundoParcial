@@ -4,18 +4,35 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.*;
 
-public class LogoutTest extends BaseTodoLy {
-    MainPage mainPage= new MainPage();
-    LoginPage loginPage = new LoginPage();
-    MenuSection menuSection = new MenuSection();
-    String email = "llubilinares@gmail.com";
-    String password = "lapaz2000" ;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import pages.HomePage;
+import pages.LoginModal;
+import pages.UserMenuPage;
+
+public class LogoutTest extends BaseTodoIst{
+    HomePage homePage = new  HomePage ();
+    LoginModal loginModal = new LoginModal();
+    UserMenuPage userMenuPage = new UserMenuPage();
+    String email="llubi@gmail.com";
+    String password="lapaz2000";
 
     @Test
-    public void verifyLoginTodoLy() throws InterruptedException {
-        mainPage.loginButton.click();
-        loginPage.login(email,password);
-        Thread.sleep(7000);
-        Assertions.assertTrue(menuSection.profileInfoButton.isControlDisplayed(), "ERROR, no se pudo hacer el login");
+    public void verifyLogOut() throws InterruptedException {
+        //Log in A TODOIST
+        Thread.sleep(2000);
+        homePage.loginButton.click();
+        loginModal.email.setText(email);
+        loginModal.password.setText(password);
+        loginModal.loginSubmit.click();
+        userMenuPage.userImg.click();
+        Thread.sleep(2000);
+        Assertions.assertTrue(userMenuPage.logoutButton.isControlDisplayed(),"ERROR, no se hizo log in");
+
+        //Log out TODOIST
+        userMenuPage.logoutButton.click();
+        Thread.sleep(3000);
+        Assertions.assertTrue(homePage.loginButton.isControlDisplayed());
+
     }
 }
